@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { useState } from 'react'
 import Player from '../components/player'
 import TestPlaylist from '../data/test-playlist.json'
@@ -33,7 +34,7 @@ export default function Home() {
     updateSearchResults(response.data.items)
     console.log(response.data.items) //
   }
-  //add videos from search results to the playlist
+  //add videos to the playlist from search results
   const addToPlaylist = (video) => {
     console.log(video)
     updateVideoData((videoData) => [...videoData, video])
@@ -42,14 +43,28 @@ export default function Home() {
     }
   }
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="min-h-full bg-cyan-300">
       <Head>
-        <title>Youtube Player</title>
+        <title>Simple Player</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <section className="min-w-full py-2 text-center">
+        <div className="flex flex-row items-center">
+          <Image src="/icon-192x192.png" width={50} height={50} />
+          <h1 className="text-3xl font-bold">Simple Player</h1>
+        </div>
+        <p>A Minimal Application for Youtube Videos</p>
+      </section>
+
       <main>
-        <div className="justify-content: center">
+        <div className="flex items-center justify-center bg-cyan-600">
+          <div className="w-20 text-center">
+            <button>previous</button>
+          </div>
           <Player videoId={currentVideoId} onEnd={playNext} />
+          <div className="w-20 text-center">
+            <button onClick={playNext}>next</button>
+          </div>
         </div>
       </main>
       <div>

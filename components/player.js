@@ -1,9 +1,9 @@
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from 'react-player/youtube'
 export default function Player(props) {
-  const videoURL = "https://www.youtube.com/watch?v=" + props.videoId;
+  const videoURL = 'https://www.youtube.com/watch?v=' + props.videoId
 
   return (
-    <div>
+    <div className="flex flex-shrink">
       <ReactPlayer
         url={videoURL}
         playing={true}
@@ -12,11 +12,11 @@ export default function Player(props) {
           youtube: {
             playerVars: {
               autoplay: 1,
-              controls: 1
-            }
-          }
+              controls: 1,
+            },
+          },
         }}
       />
     </div>
-  );
+  )
 }

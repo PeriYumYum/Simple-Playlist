@@ -1,6 +1,6 @@
 export default function Playlist(props) {
   return (
-    <div className="max-h-96 max-w-sm overflow-y-scroll">
+    <div className="max-h-120 max-w-sm overflow-y-scroll">
       {props.data.map((item, index) => {
         return (
           <div key={index} className="flex w-60 flex-row items-center">
