@@ -2,7 +2,7 @@ import { useState } from 'react'
 export default function SearchBar(props) {
   const [input, setInput] = useState('')
   return (
-    <div className="relative flex w-max  flex-row">
+    <div className="relative flex w-1/2  flex-row">
       <input
         type="text"
         onChange={(e) => setInput(e.target.value)}

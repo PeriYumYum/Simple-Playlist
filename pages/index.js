@@ -43,26 +43,26 @@ export default function Home() {
     }
   }
   return (
-    <div className="min-h-full bg-cyan-300">
+    <div className="h-full bg-slate-300">
       <Head>
-        <title>Simple Player</title>
+        <title>Simple Playlist</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="min-w-full py-2 text-center">
-        <div className="flex flex-row items-center">
+      <section className="min-w-full p-2 text-center">
+        <div className="m-2 flex flex-row items-center">
           <Image src="/icon-192x192.png" width={50} height={50} />
-          <h1 className="text-3xl font-bold">Simple Player</h1>
+          <h1 className="text-3xl font-bold">Simple Playlist</h1>
         </div>
-        <p>A Minimal Application for Youtube Videos</p>
+        <p>Search and add YOUTUBE videos to a minimal playlist!</p>
       </section>
 
       <main>
-        <div className="flex items-center justify-center bg-cyan-600">
-          <div className="w-20 text-center">
+        <div className="flex h-full items-center justify-center bg-sky-900">
+          <div className="m-2 w-20 text-center">
             <button>previous</button>
           </div>
           <Player videoId={currentVideoId} onEnd={playNext} />
-          <div className="w-20 text-center">
+          <div className="m-2 w-20 text-center">
             <button onClick={playNext}>next</button>
           </div>
         </div>

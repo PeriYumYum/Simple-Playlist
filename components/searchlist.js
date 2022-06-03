@@ -6,14 +6,16 @@ export default function SearchList(props) {
       {results.map((item) => {
         return (
           <div key={item.id.videoId} className="flex flex-row space-x-2 py-1">
-            <Image
-              className="flex shrink-0"
-              src={item.snippet.thumbnails.default.url}
-              alt="Music video thumbnail"
-              width={120}
-              height={90}
-            />
-            <div className="flex flex-col ">
+            <div className="flex shrink-0">
+              <Image
+                src={item.snippet.thumbnails.default.url}
+                alt="Music video thumbnail"
+                width={120}
+                height={90}
+              />
+            </div>
+
+            <div className="flex flex-col flex-wrap ">
               <h3 className="text-md font-semibold">{item.snippet.title}</h3>
               <p className="text-sm font-light">{item.snippet.channelTitle}</p>
               <div>
